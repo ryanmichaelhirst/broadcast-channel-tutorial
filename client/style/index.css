@@ -1,0 +1,148 @@
+:root {
+    --primary-color: rgb(62, 100, 255);
+    --complete-color: #27aa80;
+    --text-color: #263646;
+    --disabled-color: #fad6d6;
+    --background-color: #f5eaea;
+}
+
+html {
+    background-color: #f5eaea;
+}
+
+body {
+    background-color: #fdfdfd;
+    color: var(--text-color);
+    font-family: rubik,arial;
+    margin: 0;
+}
+
+a {
+    color: unset;
+    text-decoration: unset;
+    cursor: pointer;
+}
+
+p {
+    margin: 10px 0;
+    overflow-wrap: break-word;
+    text-align: left;
+}
+
+label {
+    font-size: 16px;
+    display: block;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+button, input {
+    padding: 4px;
+    border: 1px solid var(--disabled-color);
+}
+
+button {
+    outline: none;
+    background: transparent;
+    border-radius: 5px;
+    color: var(--primary-color);
+    transition: all ease 0.8s;
+    cursor: pointer;
+}
+
+button.active {
+    color: var(--primary-color);
+}
+
+button.active:after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    padding-top: 4px;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+input:focus {
+    outline: none;
+}
+
+select {
+    outline: none;
+    height: 40px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+#app {
+    margin: 40px auto;
+    max-width: 400px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.submit-btn:hover {
+    color: white;
+    box-shadow: inset 200px 0 0 0 var(--primary-color);
+}
+
+.toggle-btn {
+    border: unset;
+    border-radius: unset;
+    color: var(--disabled-color);
+    width: 100px;
+}
+
+.toggle-btn:hover {
+    color: var(--primary-color);
+}
+
+.badge {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    margin-left: 5px;
+    padding: 3px 5px;
+}
+
+.msg-timestamp {
+    font-size: 9px;
+    color: #5f6769;
+}
+
+.msg-bubble {
+    border-radius: 5px;
+    padding: 4px 15px;
+    margin: 20px 0;
+}
+
+.msg-sent {
+    color: white;
+    background-color: #0B7DFF;
+}
+
+.msg-received {
+    color: black;
+    background-color: var(--background-color);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form > * {
+    display: block;
+    width: inherit;
+    margin: 10px 0;
+}
+
+.form > *:last-child {
+    margin-bottom: 20px;
+}
