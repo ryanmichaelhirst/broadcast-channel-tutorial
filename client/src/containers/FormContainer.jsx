@@ -20,6 +20,7 @@ const FormContainer = ({ setSent, channel }) => {
         };
         channel.postMessage({ ...data });
         setSent(prevState => ([ ...prevState, { ...data }]));
+        setInputVal("");
     };
 
     return (

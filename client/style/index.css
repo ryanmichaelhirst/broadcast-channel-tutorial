@@ -89,7 +89,7 @@ select {
 
 .submit-btn:hover {
     color: white;
-    box-shadow: inset 200px 0 0 0 var(--primary-color);
+    box-shadow: inset 500px 0 0 0 var(--primary-color);
 }
 
 .toggle-btn {
@@ -127,6 +127,9 @@ select {
     background-color: #0B7DFF;
 }
 
+.msg-sent > .msg-timestamp {
+    color: white;
+}
 .msg-received {
     color: black;
     background-color: var(--background-color);

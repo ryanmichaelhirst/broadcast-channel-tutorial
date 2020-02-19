@@ -18,6 +18,7 @@ const ExampleContainer = ({ channel }) => {
     const onClick = () => {
         const item = { msg, type: "sent", date: new Date() };
         setSent(prevState => ([...prevState, item]));
+        setMsg("");
         channel.postMessage(item);
     };
 
