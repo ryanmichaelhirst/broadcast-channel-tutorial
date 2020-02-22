@@ -103,14 +103,6 @@ select {
     color: var(--primary-color);
 }
 
-.badge {
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    margin-left: 5px;
-    padding: 3px 5px;
-}
-
 .msg-timestamp {
     font-size: 9px;
     color: #5f6769;
@@ -130,6 +122,7 @@ select {
 .msg-sent > .msg-timestamp {
     color: white;
 }
+
 .msg-received {
     color: black;
     background-color: var(--background-color);

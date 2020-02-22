@@ -1,5 +1,4 @@
 import React from "react";
-import MessageContainer from "../containers/MessageContainer";
 import ChatContainer from "../containers/ChatContainer";
 import RepositoryContainer from "../containers/RepositoryContainer";
 import ExampleContainer from "../containers/ExampleContainer";
@@ -8,8 +7,6 @@ const ComponentSwitch = ({ mode, sent, received, repo, channel }) => {
     switch (mode) {
         case "example":
             return <ExampleContainer channel={channel} />;
-        case "broadcast":
-            return <MessageContainer sent={sent} received={received} />;
         case "chat":
             return <ChatContainer chats={sent.concat(received)} />;
         case "repository":

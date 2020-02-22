@@ -27,7 +27,7 @@ const Homepage = () => {
     return (
         <Fragment>
             <ToggleBtns
-                options={["example", "broadcast", "chat", "repository"]}
+                options={["example", "chat", "repository"]}
                 toggled={mode}
                 onToggle={onToggle}
             />
