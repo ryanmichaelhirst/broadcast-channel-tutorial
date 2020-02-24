@@ -14,7 +14,7 @@ const Homepage = () => {
 
     useEffect(() => {
         channel.onmessage = ({ data }) => {
-            console.log(`listener received message!`, { data });
+            // console.log(`listener received message!`, { data });
             setReceived(prevState => ([ ...prevState, { ...data, type: "received" }]));
         };
         repoChannel.onmessage = ({ data }) => {
@@ -43,7 +43,6 @@ const Homepage = () => {
                     sent={sent}
                     received={received}
                     repo={repo}
-                    channel={channel}
                 />
             }
         </Fragment>

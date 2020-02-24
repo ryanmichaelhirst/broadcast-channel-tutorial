@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
-// const channel = new BroadcastChannel("main");
+const channel = new BroadcastChannel("main");
 const allChannel = new BroadcastChannel("main");
 
-const ExampleContainer = ({ channel }) => {
+const ExampleContainer = () => {
     const [msg, setMsg] = useState("");
     const [sent, setSent] = useState([]);
     const [received, setReceived] = useState([]);
     const [all, setAll] = useState([]);
 
     useEffect(() => {
-        channel.onmessage = ({ data }) => setReceived(prevState => ([...prevState, data]));
+        channel.onmessage = ({ data }) => {
+            console.log("channel received a msg!!", data);
+            setReceived(prevState => ([...prevState, data]));
+        };
         allChannel.onmessage = ({ data }) => setAll(prevState => ([...prevState, data]));
     }, []);
 

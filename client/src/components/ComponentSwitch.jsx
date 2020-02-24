@@ -3,10 +3,10 @@ import ChatContainer from "../containers/ChatContainer";
 import RepositoryContainer from "../containers/RepositoryContainer";
 import ExampleContainer from "../containers/ExampleContainer";
 
-const ComponentSwitch = ({ mode, sent, received, repo, channel }) => {
+const ComponentSwitch = ({ mode, sent, received, repo }) => {
     switch (mode) {
         case "example":
-            return <ExampleContainer channel={channel} />;
+            return <ExampleContainer />;
         case "chat":
             return <ChatContainer chats={sent.concat(received)} />;
         case "repository":
