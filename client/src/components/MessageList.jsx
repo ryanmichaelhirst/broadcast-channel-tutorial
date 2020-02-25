@@ -6,7 +6,7 @@ const MessageList = ({ messages, showDate }) => {
     }
 
     return messages.map((m, idx) => {
-        const className = m.type === "sent" ? "msg-sent" : "msg-received";
+        const className = showDate ?  "msg-tracked" : m.type === "sent" ? "msg-sent" : "msg-received";
         return (
             <div key={`${m.msg}-${idx}`} className={`msg-bubble ${className}`}>
                 {showDate &&

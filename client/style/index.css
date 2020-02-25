@@ -104,8 +104,8 @@ select {
 }
 
 .msg-timestamp {
+    color: white;
     font-size: 9px;
-    color: #5f6769;
 }
 
 .msg-bubble {
@@ -119,13 +119,14 @@ select {
     background-color: #0B7DFF;
 }
 
-.msg-sent > .msg-timestamp {
-    color: white;
-}
-
 .msg-received {
     color: black;
     background-color: var(--background-color);
+}
+
+.msg-tracked {
+    color: white;
+    background-color: var(--complete-color);
 }
 
 .form {
