@@ -6,7 +6,6 @@ const all = new BroadcastChannel("tester");
 const ExampleContainer = () => {
     useEffect(() => {
         bc.onmessage = e => console.log("i receive msgs from tabs EXCEPT the sender", e);
-
         all.onmessage = e => console.log("i receive msgs from ALL tabs", e);
     }, []);
 
