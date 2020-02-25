@@ -1,47 +1,19 @@
-import React, { useState, useEffect } from "react";
-const channel = new BroadcastChannel("main");
-const allChannel = new BroadcastChannel("main");
+import React, { useEffect } from "react";
+
+const bc = new BroadcastChannel("tester");
+const all = new BroadcastChannel("tester");
 
 const ExampleContainer = () => {
-    const [msg, setMsg] = useState("");
-    const [sent, setSent] = useState([]);
-    const [received, setReceived] = useState([]);
-    const [all, setAll] = useState([]);
-
     useEffect(() => {
-        channel.onmessage = ({ data }) => {
-            console.log("channel received a msg!!", data);
-            setReceived(prevState => ([...prevState, data]));
-        };
-        allChannel.onmessage = ({ data }) => setAll(prevState => ([...prevState, data]));
+        bc.onmessage = e => console.log("i receive msgs from tabs EXCEPT the sender", e);
+
+        all.onmessage = e => console.log("i receive msgs from ALL tabs", e);
     }, []);
 
-    const onChange = e => setMsg(e.target.value);
-
-    const onClick = () => {
-        const item = { msg, type: "sent", date: new Date() };
-        setSent(prevState => ([...prevState, item]));
-        setMsg("");
-        channel.postMessage(item);
-    };
+    bc.postMessage("test msg!");
 
     return (
-        <div style={{ marginTop: 40 }}>
-            <input value={msg} onChange={onChange} />
-            <button className={"submit-btn"} onClick={onClick}>Send message</button>
-            <h2>Sent messages</h2>
-            {sent.map((msg, idx) => {
-                return <p key={`${msg}-${idx}`}>{msg.msg} - {msg.date.toTimeString()}</p>
-            })}
-            <h2>Received messages</h2>
-            {received.map((msg, idx) => {
-                return <p key={`${msg}-${idx}`}>{msg.msg} - {msg.date.toTimeString()}</p>
-            })}
-            <h2>All messages</h2>
-            {all.map((msg, idx) => {
-                return <p key={`${msg}-${idx}`}>{msg.msg} - {msg.date.toTimeString()}</p>
-            })}
-        </div>
+        <div>Open 2 tabs, refresh 1, then check the console!</div>
     );
 };
 

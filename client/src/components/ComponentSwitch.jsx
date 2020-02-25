@@ -1,7 +1,7 @@
 import React from "react";
+import ExampleContainer from "../containers/ExampleContainer";
 import ChatContainer from "../containers/ChatContainer";
 import RepositoryContainer from "../containers/RepositoryContainer";
-import ExampleContainer from "../containers/ExampleContainer";
 
 const ComponentSwitch = ({ mode, sent, received, repo }) => {
     switch (mode) {
